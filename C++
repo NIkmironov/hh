@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+float circleArea(float a){
+  a = 3.141592 * a;
+   return a ;
+}
+float triangleArea(float a, float b, float c){
+  float p = (a+b+c)/2;
+  float s = sqrt( p*(p-a)*(p-b)*(p-c));
+  return s;
+}
+int main() {
+  float S = 0;
+  char k; 
+  cout << "Enter the number of the required shape\n";
+  cout << "1-circle, 2-triangle\n";
+  cin >> k;
+  if (k == '1') {
+    cout << "circle area :\n";
+    cout << "Enter the radius\n";
+    float r;
+    cin >> r;
+    S = circleArea(r);
+  } 
+  else{
+    if (k == '2') {
+      cout << "area of the triangle :\n";
+      cout << "Enter the sides of the triangle\n";
+      float a;
+      float b;
+      float c;
+      cout << "sides a = ";
+       cin >> a;
+      cout << "sides b = ";
+       cin >> b;
+      cout << "sides c = ";
+       cin >> c;
+      S = triangleArea(a,b,c);
+      }
+    else cout << "Input error !!\n";
+  }
+cout << "Required area =" << S <<"\n";
+cout << "Thank you for using it !!\n";
+return 0; 
+}
