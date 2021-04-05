@@ -1,0 +1,59 @@
+using System;
+// written in c++ translated into C#
+public static class GlobalMembers
+{
+	public static float circleArea(float a)
+	{
+	  a = 3.141592 * a;
+	   return a;
+	}
+	public static float triangleArea(float a, float b, float c)
+	{
+	  float p = (a + b + c) / 2;
+	  float s = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+	  return s;
+	}
+	internal static void Main()
+	{
+	  float S = 0F;
+	  char k;
+	  Console.Write("Enter the number of the required shape\n");
+	  Console.Write("1-circle, 2-triangle\n");
+	  k = ConsoleInput.ReadToWhiteSpace(true)[0];
+	  if (k == '1')
+	  {
+		Console.Write("circle area :\n");
+		Console.Write("Enter the radius\n");
+		float r;
+		r = float.Parse(ConsoleInput.ReadToWhiteSpace(true));
+		S = circleArea(r);
+	  }
+	  else
+	  {
+		if (k == '2')
+		{
+		  Console.Write("area of the triangle :\n");
+		  Console.Write("Enter the sides of the triangle\n");
+		  float a;
+		  float b;
+		  float c;
+		  Console.Write("sides a = ");
+		   a = float.Parse(ConsoleInput.ReadToWhiteSpace(true));
+		  Console.Write("sides b = ");
+		   b = float.Parse(ConsoleInput.ReadToWhiteSpace(true));
+		  Console.Write("sides c = ");
+		   c = float.Parse(ConsoleInput.ReadToWhiteSpace(true));
+		  S = triangleArea(a, b, c);
+		}
+		else
+		{
+			Console.Write("Input error !!\n");
+		}
+	  }
+	Console.Write("Required area =");
+	Console.Write(S);
+	Console.Write("\n");
+	Console.Write("Thank you for using it !!\n");
+	}
+}
+
